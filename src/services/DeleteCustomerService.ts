@@ -17,7 +17,7 @@ class DeleteCustomerService{
         if(!findCustomer){ //se não encontrou o id no find customer, ai esse erro aparece
             throw new Error("Cliente não existe!")
         }
-        await prismaClient.customer.delete({
+        await prismaClient.customer.delete({ //se encontrou o id no banco então deleta
             where:{
                 id: findCustomer.id
             }
